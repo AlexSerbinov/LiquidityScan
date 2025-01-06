@@ -1,0 +1,43 @@
+{
+  "name": "transmit_fetcher",
+  "version": "1.0.0",
+  "description": "",
+  "author": "",
+  "license": "ISC",
+  "scripts": {
+    "all": "npm run events && npm run archive && npm run blacklist && npm run subgraph && npm run proxy && npm run dataFetcher && npm run transmitFetcher",
+    "transmitFetcher": "node _system/start configs/workers/transmitFetcherServices.json",
+    "debugTransmitFetcher": "node _system/debug configs/workers/transmitFetcherServices.json",
+    "dataFetcher": "node _system/start configs/workers/dataFetcherServices.json",
+    "debugDataFetcher": "node _system/debug configs/workers/dataFetcherServices.json",
+    "subgraph": "node _system/start configs/workers/subgraphServices.json",
+    "debugSubgraph": "node _system/debug configs/workers/subgraphServices.json",
+    "proxy": "node _system/start configs/workers/proxyServices.json",
+    "debugProxy": "node _system/debug configs/workers/proxyServices.json",
+    "blacklist": "node _system/start configs/workers/blacklistServices.json",
+    "debugBlacklist": "node _system/debug configs/workers/blacklistServices.json",
+    "archive": "node _system/start configs/workers/archiveServices.json",
+    "debugArchive": "node _system/debug configs/workers/archiveServices.json",
+    "events": "node _system/start configs/workers/eventsServices.json",
+    "debugEvents": "node _system/debug configs/workers/eventsServices.json"
+  },
+  "dependencies": {
+    "axios": "^1.5.1",
+    "bignumber.js": "^4.0.4",
+    "ethers": "^5.7.2",
+    "graphql-request": "^5.1.0",
+    "ioredis": "^5.3.2",
+    "node-fetch": "2.6.6",
+    "node-schedule": "^2.1.1",
+    "npm": "^9.7.2",
+    "pg": "^8.11.3",
+    "pm2": "^5.3.1",
+    "sequelize": "^6.26.0"
+  },
+  "devDependencies": {
+    "concurrently": "^7.6.0",
+    "mqtt": "^5.3.6",
+    "prettier": "^2.8.7",
+    "yargs": "^17.7.1"
+  }
+}
