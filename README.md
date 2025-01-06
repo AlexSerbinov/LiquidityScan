@@ -141,7 +141,7 @@ This approach allows liquidators to more effectively protect liquidity protocols
 
 Health Factor (HF) is a key indicator in DeFi lending protocols that determines the stability of a user's position. It is calculated as the ratio of collateral value to loan amount, taking into account the liquidation coefficient.
 
-![Health Factor Balance](../images/hfBalance.jpg)
+![Health Factor Balance](doc/images/hfBalance.jpg)
 
 Health Factor can be imagined as a balance, where:
 
@@ -192,7 +192,7 @@ Understanding the concept of liquidation, the role of liquidity protocols, and t
 
 The task of the archive is to collect all users who have ever interacted with each individual protocol.
 
-![Archive And Provider Types](../images/archiveAndProviderTypes.jpg)
+![Archive And Provider Types](doc/images/archiveAndProviderTypes.jpg)
 
 ## How does the archive work?
 
@@ -284,7 +284,7 @@ However, currently, the interaction between Proxy and Subgraph services is very 
    - Proxy sends users to Subgraph in a matter of seconds. And then users enter the queue in the Subgraph service. After processing all users, Subgraph sends a signal (event drain) to Proxy, indicating the completion of processing and readiness to receive new batches.
    - Proxy retrieves an updated list of users on each subsequent circle, taking into account possible changes in Archive or Blacklist, and sends the next batch of users to Subgraph.
 
-   ![Users flow](../images/archiveToSubgraphFlow.jpg)
+   ![Users flow](doc/images/archiveToSubgraphFlow.jpg)
 
 4. **Launch and Configuration**:
    - Subgraph should always be launched before Proxy, otherwise Proxy will simply send users into the void, and we won't receive a drain event.
@@ -330,7 +330,7 @@ DataFetcher is one of the final services in the system. Its main task is to make
 
 ## Main principles of DataFetcher operation
 
-![Data fetcher flow](../images/dataFetcherFlow.jpg)
+![Data fetcher flow](doc/images/dataFetcherFlow.jpg)
 
 ### 1. Initialization:
 
@@ -373,7 +373,7 @@ DataFetcher provides detailed user analysis and makes decisions about their liqu
 
 TransmitFetcher is a service that listen Transmit transactions in the mempool to detect changes in token prices that are in the user's borrow or collateral, affecting users' Health Factor. TransmitFetcher allows liquidating a user in the same block where their Health Factor changes. In essence, it's like looking into the future by one block.
 
-![Transmit fetcher flow](../images/transmitFetcherFlow.jpg)
+![Transmit fetcher flow](doc/images/transmitFetcherFlow.jpg)
 
 ## What is Transmit:
 
@@ -400,7 +400,7 @@ TransmitFetcher is a service that listen Transmit transactions in the mempool to
 - TransmitFetcher checks all tokens in Borrow and Collateral for the user before making a liquidation decision.
 - TransmitFetcher does not write or delete users from WatchList, it only retrieves users from WatchList for analysis. The DataFetcher service handles writing and deleting users from WatchList.
 
-![HF Leverage](../images/hfBalance.jpg)
+![HF Leverage](doc/images/hfBalance.jpg)
 
 ### 4. Advantages of TransmitFetcher:
 
@@ -415,7 +415,7 @@ TransmitFetcher provides monitoring and analysis of changes in token prices that
 
 Events is one of the critically important services in the Liquidator structure, which performs two main functions: monitoring new blocks and monitoring GlobalReservesData.
 
-![Events Service](../images/events.jpg)
+![Events Service](doc/images/events.jpg)
 
 ## Functions of the Events service
 
@@ -523,7 +523,7 @@ The Events service provides reliable and timely transmission of critically impor
 
 ### Logging
 
-![Log Screenshot](../images/logsScreenshot.jpg)
+![Log Screenshot](doc/images/logsScreenshot.jpg)
 
 #### General Description
 
