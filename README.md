@@ -1,7 +1,8 @@
 # Liquidation Scanner 
 
-> **Important Notice**: This is a demonstration repository that serves as part of my GitHub portfolio for job applications. Many parts of the code and configurations have been removed. The repository showcases my experience with DeFi protocols, particularly in the field of liquidation services.
+> **Important Notice**: This is a demonstration repository. It is part of my GitHub portfolio intended for job applications. Many parts of the code and configuration have been intentionally removed. The repository showcases my experience with DeFi protocols, MEV Boat, and working expirience with AAVE and Compound protocols
 
+The code is a trimmed-down version of a real project, adapted to be safely published on GitHub for demonstration purposes.
 ---
 
 [Detailed documentation can be found in the `doc` folder](./doc)
